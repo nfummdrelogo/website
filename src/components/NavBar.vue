@@ -5,11 +5,11 @@
     }">
     <div class="top">
       <div class="toggle" @click="expand = !expand">
-        <img src="@/assets/catalog.png" width="40" alt />
+        <!-- <img src="@/assets/catalog.png" width="40" alt /> -->
       </div>
       <router-link to="/">
         <div class="logo">
-          <img src="@/assets/catalogFont.png" height="40" alt />
+          <!-- <img src="@/assets/catalogFont.png" height="40" alt /> -->
         </div>
       </router-link>
     </div>
