@@ -11,7 +11,7 @@
 
 <script>
 
-import * as THREE from "THREE"
+import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import model from '../assets/vi/3DMODEL.glb'
 var loader = new GLTFLoader()
