@@ -66,8 +66,8 @@ export default {
     var animationObj = {
       stop: false,
       mouseMove: function (e) {
-        x = e.x / innerWidth - 0.5
-        y = e.y / innerHeight - 0.5
+        x = e.pageX / innerWidth - 0.5
+        y = e.pageY / innerHeight - 0.5
       }
     }
 

@@ -9,13 +9,13 @@
           <img src="@/assets/catalog.png" height="36" alt />
         </div>
         <router-link to="/">
-          <div class="logo">
+          <div class="inside logo">
             <img src="@/assets/catalogfont.png" height="36" alt />
           </div>
         </router-link>
       </div>
 
-      <div class="more">
+      <div class="inside more">
         <div class="name">國立虎尾科技大學</div>
         <div @click="expand=false">
           <router-link class="item" to="/">關於比賽</router-link>
@@ -24,7 +24,7 @@
         </div>
         <div class="item mute">外審評分</div>
         <div class="item mute">人氣投票</div>
-        <img src="@/assets/downFontcard.png" class="downlogo" height="60" alt />
+        <img src="@/assets/downFontcard.png" class="inside downlogo" height="60" alt />
       </div>
     </div>
     <div class="cover" @click="expand=false"></div>
@@ -50,6 +50,8 @@ export default {
   height: 100vh;
   width: inherit;
   overflow: hidden;
+  z-index: 2;
+  background: #222;
 }
 .bar {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -63,11 +65,11 @@ export default {
     }
     display: flex;
   }
-
-  .more,
-  .logo {
-    opacity: 0;
+  .more {
     width: 240px;
+  }
+  .inside {
+    opacity: 0;
     transition: opacity 0.2s;
   }
   .cover {
@@ -78,7 +80,7 @@ export default {
     top: 0px;
     left: 0px;
     opacity: 0;
-    z-index: -1;
+    z-index: 1;
     transition: opacity 0.5s;
     pointer-events: none;
   }
@@ -109,8 +111,7 @@ export default {
 
   &.expand {
     width: 280px;
-    .more,
-    .logo {
+    .inside {
       opacity: 1;
     }
     .toggle {
@@ -128,7 +129,6 @@ export default {
   overflow: hidden;
 
   display: inline-block;
-  background: #222;
 }
 
 .more {

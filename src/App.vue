@@ -28,7 +28,6 @@ export default {
 .nav {
   height: 100%;
   overflow: visible;
-  z-index: 99;
 }
 
 .page {
