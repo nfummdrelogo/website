@@ -14,17 +14,29 @@
           </div>
         </router-link>
       </div>
-
-      <div class="inside more">
-        <div class="name">國立虎尾科技大學</div>
-        <div @click="expand=false">
-          <router-link class="item" to="/">關於比賽</router-link>
-          <router-link class="item" to="/UploadGallery">作品牆面</router-link>
-          <router-link class="item" to="/Upload">作品投稿</router-link>
+      <div class="mask">
+        <div class="expand">
+          <div class="scroll">
+            <div class="inside more">
+              <div class="name">國立虎尾科技大學</div>
+              <div @click="expand=false">
+                <router-link class="item" to="/">關於比賽</router-link>
+              </div>
+              <div @click="expand=false">
+                <router-link class="item" to="/UploadGallery">作品牆面</router-link>
+              </div>
+              <div @click="expand=false">
+                <router-link class="item" to="/Upload">作品投稿</router-link>
+              </div>
+              <div class="item mute">外審評分</div>
+              <div class="item mute">人氣投票</div>
+              <div @click="expand=false">
+                <router-link class="item" to="/Contact">聯絡我們</router-link>
+              </div>
+              <img src="@/assets/downFontcard.png" class="inside downlogo" height="60" alt />
+            </div>
+          </div>
         </div>
-        <div class="item mute">外審評分</div>
-        <div class="item mute">人氣投票</div>
-        <img src="@/assets/downFontcard.png" class="inside downlogo" height="60" alt />
       </div>
     </div>
     <div class="cover" @click="expand=false"></div>
@@ -52,9 +64,29 @@ export default {
   overflow: hidden;
   z-index: 2;
   background: #222;
-}
-.bar {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.expand {
+  height: 100%;
+  margin-right: -50px;
+  box-sizing: content-box;
+}
+
+.scroll{
+  padding-right: 50px;
+  height: 100%;
+  overflow: auto;
+}
+
+.bar {
   height: 100%;
   width: 75px;
 
