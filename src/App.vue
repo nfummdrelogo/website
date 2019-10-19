@@ -3,72 +3,72 @@
     <div class="nav">
       <NavBar></NavBar>
     </div>
-    <div class="page">
-      <transition name="page" mode="out-in">
-        <router-view />
-      </transition>
-    </div>
 
+    <div class="wrapper">
+      <div class="page">
+        <transition name="page" mode="out-in">
+          <router-view />
+        </transition>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import NavBar from './components/NavBar'
-  export default {
-    name: 'app',
-    components: {
-      NavBar
-    }
+import NavBar from "./components/NavBar";
+export default {
+  name: "app",
+  components: {
+    NavBar
   }
+};
 </script>
 
 <style>
-  .nav {
-    height: 100%;
-    overflow: visible;
-  }
+.nav {
+  height: 100%;
+  overflow: visible;
+  z-index: 99;
+}
 
-  .page {
-    padding-top: 100px;
-    padding-left: 100px;
-    background: #EBEBEB;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    max-width: 1200px;
-    margin-right: 90px;
-    transition: all 0.1s;
-  }
+.page {
+  flex-shrink: 0;
+  padding-top: 80px;
+  max-width: 1200px;
 
-  @media (max-width: 800px) {
-    .page {
-      margin-right: 32px;
-    }
-  }
+  background: #ebebeb;
+  width: 100%;
+  min-height: 100%;
+  transition: all 0.1s;
+  margin-right: 150px;
+}
 
-  @media (max-width: 500px) {
-    .page {
-      margin-right: 8px;
-      padding-top: 50px;
-      padding-left: 50px;
-    }
-  }
+.wrapper {
+  min-width: 100vw;
+  padding-right: 120px;
+  overflow-x: hidden;
+}
 
-  @media (min-width: 2000px) {
-    .page {
-      max-width: 60%;
-    }
+@media (max-width: 800px) {
+  .wrapper {
+    padding-right: 85px;
   }
+}
 
-  #app {
-    display: flex;
-    background-image: url("./assets/BG.jpg");
-    background-size: cover;
-    background-position-x: right;
-    width: 100%;
-    height: 100%;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@media (max-width: 400px) {
+  .wrapper {
+    padding-right: 70px;
   }
+}
+
+#app {
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 </style>

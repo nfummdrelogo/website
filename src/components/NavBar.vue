@@ -3,26 +3,31 @@
       bar: true,
       expand
     }">
-    <div class="top">
-      <div class="toggle" @click="expand = !expand">
-        <img src="@/assets/catalog.png" width="40" alt />
-      </div>
-      <router-link to="/">
-        <div class="logo">
-          <img src="@/assets/catalogfont.png" height="40" alt />
+    <div class="content">
+      <div class="top">
+        <div class="toggle" @click="expand = !expand">
+          <img src="@/assets/catalog.png" height="36" alt />
         </div>
-      </router-link>
-    </div>
+        <router-link to="/">
+          <div class="logo">
+            <img src="@/assets/catalogfont.png" height="36" alt />
+          </div>
+        </router-link>
+      </div>
 
-    <div class="more">
-      <div class="name">國立虎尾科技大學</div>
-
-      <router-link class="item" to="/">About</router-link>
-      <router-link class="item" to="/UploadGallery">作品牆面</router-link>
-      <router-link class="item" to="/Upload">作品投稿</router-link>
-      <div class="item mute">外審評分</div>
-      <div class="item mute">人氣投票</div>
+      <div class="more">
+        <div class="name">國立虎尾科技大學</div>
+        <div @click="expand=false">
+          <router-link class="item" to="/">關於比賽</router-link>
+          <router-link class="item" to="/UploadGallery">作品牆面</router-link>
+          <router-link class="item" to="/Upload">作品投稿</router-link>
+        </div>
+        <div class="item mute">外審評分</div>
+        <div class="item mute">人氣投票</div>
+        <img src="@/assets/downFontcard.png" class="downlogo" height="60" alt />
+      </div>
     </div>
+    <div class="cover" @click="expand=false"></div>
   </div>
 </template>
 
@@ -39,9 +44,18 @@ export default {
 
 
 <style lang="scss" scoped>
+.content {
+  position: fixed;
+  padding-right: 40px;
+  height: 100vh;
+  width: inherit;
+  overflow: hidden;
+}
 .bar {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   height: 100%;
-  max-width: 60px;
+  width: 75px;
+
   .top {
     color: white;
     .toggle {
@@ -53,29 +67,60 @@ export default {
   .more,
   .logo {
     opacity: 0;
+    width: 240px;
+    transition: opacity 0.2s;
   }
-
-  .more {
-    width: 260px;
+  .cover {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: black;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s;
+    pointer-events: none;
+  }
+  .name {
+    position: relative;
+    margin-top: 16px;
+    margin-bottom: 50px;
+    letter-spacing: 16px;
+    right: -16px;
+    font-size: 11px;
+    color: #888888;
   }
 
   .toggle {
-    margin: 8px;
+    margin: 15px 20px;
     transition: margin 0.2s;
   }
+
   .logo {
-    margin-top: 16px;
-    margin-right: 16px;
+    margin-top: 30px;
+  }
+
+  .downlogo {
+    position: fixed;
+    bottom: 10px;
+    left: 4px;
   }
 
   &.expand {
-    max-width: 300px;
+    width: 280px;
     .more,
     .logo {
       opacity: 1;
     }
     .toggle {
-      margin: 16px;
+      margin-left: 32px;
+      margin-top: 30px;
+      margin-right: 20px;
+    }
+    .cover {
+      opacity: 0.5;
+      pointer-events: all;
     }
   }
 
@@ -91,14 +136,14 @@ export default {
 }
 
 .item {
-  width: 150px;
+  height: 40px;
+  font-size: 24px;
+  position: relative;
+  letter-spacing: 0.6em;
+  right: -0.6em;
   display: inline-block;
 
-  text-align: right;
-  font-size: 32px;
   margin: 16px 0px;
-  border-right: solid 4px transparent;
-  padding-right: 16px;
 
   color: white;
 
