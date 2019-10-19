@@ -1,4 +1,5 @@
 @import 'reset';
+@import 'animation';
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap');
 
 html,
@@ -8,5 +9,19 @@ body {
 }
 
 *{
+    color: unset;
+    text-decoration: none;
     font-family: 'M PLUS 1p', sans-serif;
+    box-sizing: border-box;
+
+}
+
+.container{
+    max-width: 740px;
+    margin: 0px 40px;
+}
+
+p {
+    line-height: 2;
+    letter-spacing: 0.5em;
 }
