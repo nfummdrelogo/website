@@ -14,11 +14,9 @@
           ></div>
         </template>
       </div>
-      <transition name="page" type="out-in">
-        <div class="cover">
-          <div class="msg">即將於10/25開放</div>
-        </div>
-      </transition>
+      <div class="cover">
+        <div class="msg">即將於10/25開放</div>
+      </div>
     </div>
   </div>
 </template>

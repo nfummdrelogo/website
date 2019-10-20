@@ -30,6 +30,9 @@
 
       <hr />
     </div>
+    <div class="cover">
+      <div class="msg">即將於10/25開放</div>
+    </div>
   </div>
 </template>
 
@@ -81,11 +84,48 @@ export default {
 
 
 <style lang="scss" scoped>
+@import '../style/rwd';
+
 .iframe-wrapper {
   margin: 50px -50px;
 }
 
 iframe {
   width: 100%;
+}
+
+
+
+.cover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+.msg {
+  position: relative;
+  margin: auto;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 596px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 48px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 19.92px;
+  color: #ffffff;
+
+  @include rwd-dn(phone) {
+    width: 251px;
+    letter-spacing: 2.4px;
+
+    font-size: 24px;
+  }
 }
 </style>
