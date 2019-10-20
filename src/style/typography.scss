@@ -19,6 +19,7 @@ h1 {
   line-height: 130px;
   font-weight: 800;
   margin-bottom: 50px;
+  margin-left: -8px;
 }
 
 h2 {
@@ -26,7 +27,7 @@ h2 {
   font-weight: normal;
   letter-spacing: 12.48px;
   color: #222222;
-  margin: 0px;
+  margin-left: -6px;
 }
 
 h3 {
@@ -61,8 +62,9 @@ hr {
     font-size: 55px;
     line-height: 65px;
     margin-bottom: 20px;
+    margin-left: -4px;
   }
-  h2{
+  h2 {
     font-size: 64px;
     letter-spacing: 12.48px;
   }
