@@ -9,7 +9,6 @@
         <transition name="page" mode="out-in">
           <router-view />
         </transition>
-
       </div>
     </div>
   </div>
@@ -26,6 +25,8 @@ export default {
 </script>
 
 <style>
+
+
 .nav {
   height: 100%;
   overflow: visible;
@@ -42,7 +43,6 @@ export default {
   transition: all 0.1s;
   margin-right: 150px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-
 }
 
 .wrapper {
@@ -53,15 +53,10 @@ export default {
 
 @media (max-width: 800px) {
   .wrapper {
-    padding-right: 85px;
+    padding-right: 0px;
   }
 }
 
-@media (max-width: 400px) {
-  .wrapper {
-    padding-right: 70px;
-  }
-}
 
 #app {
   display: flex;

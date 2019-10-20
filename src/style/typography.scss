@@ -10,9 +10,8 @@ p {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.45em;
+  margin: 10px 0px;
 }
-
-
 
 h1 {
   font-size: 120px;
@@ -22,7 +21,7 @@ h1 {
   margin-bottom: 50px;
 }
 
-h2{
+h2 {
   font-size: 64px;
   font-weight: normal;
   letter-spacing: 12.48px;
@@ -38,7 +37,7 @@ h3 {
   font-weight: normal;
 }
 
-h4{
+h4 {
   font-size: 24px;
   color: #444;
   font-weight: normal;
@@ -47,20 +46,34 @@ h4{
   margin: 24px 0px;
 }
 
-hr{
+hr {
   margin-top: 128px;
   border: solid 1px #888;
 }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 70px;
-    line-height: 80px;
+@media (max-width: 800px) {
+  p {
+    font-size: 16px;
+    letter-spacing: 5px;
+    line-height: normal;
   }
-  
+  h1 {
+    font-size: 55px;
+    line-height: 65px;
+    margin-bottom: 20px;
+  }
+  h2{
+    font-size: 64px;
+    letter-spacing: 12.48px;
+  }
   h3 {
+    font-size: 16px;
+    letter-spacing: 28.8px;
     letter-spacing: 1em;
+    margin-bottom: 20px;
   }
 
-  
+  hr {
+    margin-top: 40px;
+  }
 }

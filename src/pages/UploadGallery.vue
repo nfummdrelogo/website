@@ -4,15 +4,15 @@
       <h2>作品牆面</h2>
       <h4>RELOGO</h4>
       <div class="gallery-grid">
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
+        <template v-for="(item, i) in items">
+          <div
+            class="gallery-item"
+            :key="i"
+            v-bind:style="{
+            backgroundImage: 'url('+item.img+')'
+            }"
+          ></div>
+        </template>
       </div>
       <transition name="page" type="out-in">
         <div class="cover">
@@ -24,16 +24,41 @@
 </template>
 
 <script>
+var url =
+  "https://script.google.com/macros/s/AKfycbzGMZozxCi_TD56G-exkreTIbx0RY7Dkf2PE5i8PhCWUBV4Ldc/exec";
+
 export default {
   name: "UploadGallery",
   data() {
-    return {};
+    return {
+      items: []
+    };
+  },
+  mounted() {
+    var app = this;
+    this.items.splice(0, this.items.length);
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("get", url);
+    xhr.onload = function() {
+      var result = JSON.parse(xhr.response);
+      for (var i = 0; i < result.time.length; i++) {
+        var obj = {};
+        for (var j in result) {
+          obj[j] = result[j][i];
+        }
+        // app.items.push(obj);
+      }
+    };
+    xhr.send();
   }
 };
 </script>
 
 
 <style lang="scss" scoped>
+@import "../style/rwd";
+
 .cover {
   position: absolute;
   width: 100vw;
@@ -58,5 +83,12 @@ export default {
   line-height: normal;
   letter-spacing: 19.92px;
   color: #ffffff;
+
+  @include rwd-dn(phone) {
+    width: 251px;
+    letter-spacing: 2.4px;
+
+    font-size: 24px;
+  }
 }
 </style>

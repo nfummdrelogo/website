@@ -3,6 +3,8 @@
       bar: true,
       expand
     }">
+    <div class="cover" @click="expand=false"></div>
+    <div class="background"></div>
     <div class="content">
       <div class="top">
         <div class="toggle" @click="expand = !expand">
@@ -39,7 +41,6 @@
         </div>
       </div>
     </div>
-    <div class="cover" @click="expand=false"></div>
   </div>
 </template>
 
@@ -56,15 +57,20 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "../style/index";
+
 .content {
   position: fixed;
   padding-right: 40px;
   height: 100vh;
   width: inherit;
+  min-width: 75px;
   overflow: hidden;
   z-index: 2;
-  background: #222;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  @include rwd-dn(phone) {
+    background: transparent;
+    height: 75px;
+  }
 }
 
 .mask {
@@ -89,6 +95,22 @@ export default {
   height: 100%;
   width: 75px;
 
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  z-index: 2;
+
+  @include rwd-dn(phone) {
+    width: 0px;
+  }
+
+  .background {
+    background: #222;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+
   .top {
     color: white;
     .toggle {
@@ -98,6 +120,9 @@ export default {
   }
   .more {
     width: 240px;
+    @include rwd-dn(phone) {
+      width: 140px;
+    }
   }
   .inside {
     opacity: 0;
@@ -123,6 +148,13 @@ export default {
     right: -16px;
     font-size: 11px;
     color: #888888;
+
+    @include rwd-dn(phone) {
+      letter-spacing: 15px;
+      width: 120px;
+      line-height: 1.5;
+      margin: 20px auto;
+    }
   }
 
   .toggle {
@@ -132,16 +164,28 @@ export default {
 
   .logo {
     margin-top: 30px;
+    @include rwd-dn(phone) {
+      width: 28px;
+      overflow: hidden;
+    }
   }
 
   .downlogo {
     position: fixed;
     bottom: 10px;
     left: 4px;
+    @include rwd-dn(phone) {
+      margin-left: 16px;
+      width: 140px;
+      height: auto;
+    }
   }
 
   &.expand {
-    width: 280px;
+    width: 300px;
+    @include rwd-dn(phone) {
+      width: 170px;
+    }
     .inside {
       opacity: 1;
     }
@@ -154,6 +198,9 @@ export default {
       opacity: 0.5;
       pointer-events: all;
     }
+    .content {
+      height: 100vh;
+    }
   }
 
   transition: all 0.2s;
@@ -164,6 +211,9 @@ export default {
 
 .more {
   text-align: right;
+  @include rwd-dn(phone) {
+    text-align: center;
+  }
 }
 
 .item {
@@ -172,7 +222,7 @@ export default {
   position: relative;
   letter-spacing: 0.6em;
   right: -0.6em;
-  display: inline-block;
+  display: block;
   vertical-align: middle;
   line-height: 40px;
 
@@ -191,6 +241,12 @@ export default {
 
   &.router-link-exact-active {
     color: #ffcc00;
+  }
+
+  @include rwd-dn(phone) {
+    font-size: 18px;
+    letter-spacing: 0.4em;
+    margin: 8px 0px;
   }
 }
 </style>

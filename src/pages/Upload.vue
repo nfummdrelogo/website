@@ -2,11 +2,33 @@
   <div>
     <div class="container">
       <h2>作品投稿</h2>
+
       <h4>目前未開放。</h4>
-      <h4>Select image to upload:</h4>
-      <input ref="file" type="file" name="image" id="image" />
-      <button @click="upload">upload</button>
-      {{link}}
+
+      <hr />
+
+      <div>
+        <p>請先將作品轉換為URL：</p>
+
+        <input ref="file" type="file" name="image" id="image" />
+
+        <button @click="upload">upload</button>
+
+        <p>{{link}}</p>
+      </div>
+
+      <div class="iframe-wrapper">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeEOGP1gwov-PBGvH-MuDM-8srS8uyH6DKpLl_3C7QKIpitwA/viewform?embedded=true"
+          width="800"
+          height="1300"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >載入中…</iframe>
+      </div>
+
+      <hr />
     </div>
   </div>
 </template>
@@ -59,8 +81,11 @@ export default {
 
 
 <style lang="scss" scoped>
+.iframe-wrapper {
+  margin: 50px -50px;
+}
+
 iframe {
   width: 100%;
-  height: 9999px;
 }
 </style>

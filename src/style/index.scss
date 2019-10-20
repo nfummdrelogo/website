@@ -1,6 +1,7 @@
 @import "reset";
 @import "animation";
 @import "typography";
+@import "rwd";
 @import url("https://fonts.googleapis.com/css?family=M+PLUS+1p:400,800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Barlow:600&display=swap");
@@ -29,19 +30,20 @@ body {
 .container {
   max-width: 800px;
   margin: 0px 80px;
-  padding-bottom: 20px;
+  padding-bottom: 1px;
 }
 .position-anchor {
   position: relative;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 1200px) {
   .container {
     margin: 0px 40px;
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 800px) {
   .container {
-    margin: 0px 8px;
+    margin: 0px 25px;
   }
 }

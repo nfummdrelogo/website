@@ -1,2 +1,17 @@
+$rwd-sizes: (
+  "phone": "800px",
+  "pc": "1200px",
+  "big": "1800px"
+);
 
+@mixin rwd-up($name) {
+  @media screen and (min-width: #{map-get($rwd-sizes, $name)}) {
+    @content;
+  }
+}
 
+@mixin rwd-dn($name) {
+  @media screen and (max-width: #{map-get($rwd-sizes, $name)}) {
+    @content;
+  }
+}

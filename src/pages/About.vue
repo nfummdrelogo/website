@@ -9,8 +9,8 @@
         </div>
       </div>
 
-      <div class="container">
-        <section class="pagesize">
+      <section class="pagesize">
+        <div class="container">
           <h3>國立虎尾科技大學</h3>
           <h1>
             多媒體設計系
@@ -18,14 +18,22 @@
             <span class="eng">LOGO</span>
           </h1>
           <h3>甄選比賽</h3>
-          <img src="@/assets/blacklogo.png" class="logo" width="172" alt />
+        </div>
+        <div class="phone-yello-bg">
+          <div class="container">
+            <img src="@/assets/blacklogo.png" class="logo" width="172" alt />
+          </div>
+        </div>
+        <div class="container">
           <p>
             一件事情 很簡單。
             我們希望LOGO變好看。大家一起讓我們的視覺重新定義，是黑是白是粉是黃不重要，美最重要。從錄影帶到CD到現今的網路串播，經過了時代的變遷。LOGO設計的準則也與過去不同，我們需要每個人去嘗試設計符合現代的多媒系。
           </p>
           <hr />
-        </section>
+        </div>
+      </section>
 
+      <div class="container">
         <section class="info">
           徵稿日期
           <br />10/25 - 12/10
@@ -70,6 +78,8 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "../style/rwd.scss";
+
 .vi-container {
   position: fixed;
   width: 100%;
@@ -77,13 +87,17 @@ export default {
   pointer-events: none;
 }
 
-.logo {
-  margin-bottom: 40px;
+@include rwd-up(phone) {
+  .logo {
+    margin-bottom: 40px;
+  }
 }
 
 .pagesize {
   min-height: 90vh;
-  margin-bottom: 20px;
+  @include rwd-dn(phone) {
+    min-height: 80vh;
+  }
 }
 
 .info {
@@ -94,6 +108,22 @@ export default {
   color: #444;
   letter-spacing: 24px;
   line-height: 2;
+
+  @include rwd-dn(phone) {
+    letter-spacing: 8px;
+  }
+}
+
+@include rwd-dn(phone) {
+  .phone-yello-bg {
+    background-color: #ffcc00;
+    padding: 23px 0px;
+    margin-bottom: 35px;
+    .logo {
+      height: 30px;
+      width: auto;
+    }
+  }
 }
 
 .date {
@@ -117,31 +147,8 @@ export default {
     font-weight: 600;
     letter-spacing: 6.86px;
     padding-top: 15px;
-
   }
 }
-
-// .important {
-//   font-weight: 800;
-//   font-size: 36px;
-//   letter-spacing: 11.7px;
-//   color: #ffcc00;
-//   position: relative;
-//   -webkit-text-stroke: 8px #000000;
-//   display: block;
-//   &::before {
-//     display: block;
-//     width: 100%;
-//     position: absolute;
-//     left: 0px;
-//     top: 0px;
-//     z-index: 1;
-//     content: attr(title);
-//     -webkit-text-stroke: 8px transparent;
-
-//     pointer-events: none;
-//   }
-// }
 
 .vi {
   position: absolute;
@@ -155,10 +162,10 @@ export default {
   font-weight: 600;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
   .vi {
     transform: scale(0.75);
-    top: 700%;
+    top: 180px;
     right: -200px;
   }
   .vi-container {
@@ -168,16 +175,9 @@ export default {
 
 @media (max-width: 800px) {
   .vi {
-    transform: scale(0.5);
-    right: -250px;
-    top: 600%;
-  }
-}
-
-@media (max-width: 600px) {
-  .vi {
-    transform: scale(0.35);
-    top: 500%;
+    transform: scale(0.55);
+    left: 10px;
+    top: -50px;
   }
 }
 </style>
