@@ -2,8 +2,8 @@
   <div>
     <div>
       <div class="container">
-        <h3>作品投稿</h3>
-        <p>目前未開放。</p>
+        <h2>作品投稿</h2>
+        <h4>目前未開放。</h4>
       </div>
     </div>
   </div>

@@ -8,19 +8,19 @@ import map4 from "@/assets/vi/maps/Bottom.png";
 import map5 from "@/assets/vi/maps/Back.png";
 import map6 from "@/assets/vi/maps/Front.png";
 
-var gltfLoader = new GLTFLoader();
-var cubeTextureLoader = new THREE.CubeTextureLoader()
-
 
 
 export default {
   mounted(canvas) {
 
 
-    var scene = new THREE.Scene
-    var camera = new THREE.PerspectiveCamera(25, canvas.height / canvas.width, 0.1, 1000);
+    let scene = new THREE.Scene
+    let camera = new THREE.PerspectiveCamera(25, canvas.height / canvas.width, 0.1, 1000);
+    let manager = new THREE.LoadingManager();
+    let gltfLoader = new GLTFLoader(manager);
+    let cubeTextureLoader = new THREE.CubeTextureLoader(manager)
 
-    var renderer = new THREE.WebGLRenderer({
+    let renderer = new THREE.WebGLRenderer({
       canvas, alpha: true, antialias: true
     })
 
@@ -35,7 +35,7 @@ export default {
 
     scene.add(new THREE.AmbientLight(0xffffff, 1))
 
-    var textureCube = cubeTextureLoader.load([
+    let textureCube = cubeTextureLoader.load([
       map1, map2, map3, map4, map5, map6
     ]);
 
@@ -44,7 +44,7 @@ export default {
 
 
 
-    var target = new THREE.Mesh()
+    let target = new THREE.Mesh()
 
     gltfLoader.load(model, function (obj) {
 
@@ -67,23 +67,28 @@ export default {
           scene.add(obj)
         }
 
-        start()
 
       })
 
     });
 
+    manager.onProgress = function (item, loaded, total) {
+      console.log(loaded, total)
+      if (loaded == total)
+        start()
+    }
+
     camera.position.set(0, 0, 100)
 
-    var x = 0;
-    var y = 0;
+    let x = 0;
+    let y = 0;
 
     function move(ex, ey) {
       x = ex / innerWidth - 0.5
       y = ey / innerHeight - 0.5
     }
 
-    var animationObj = {
+    let animationObj = {
       stop: false,
       mouseMove: function (e) {
         move(e.pageX, e.pageY)
@@ -92,7 +97,7 @@ export default {
         move(e.changedTouches[0].pageX, e.changedTouches[0].pageY)
       },
       click: function () {
-        target.rotation.y = -2*Math.PI
+        target.rotation.y = -2 * Math.PI
       }, canvas
     }
 
@@ -105,17 +110,17 @@ export default {
       if (animationObj.stop) return;
       requestAnimationFrame(update);
 
-      var tx = -x * 4 + 2
-      var ty = y * 4 - 1.5
-      var tz = Math.sqrt(Math.abs(80 - tx * tx - ty * ty))
+      let tx = -x * 4 + 2
+      let ty = y * 4 - 1.5
+      let tz = Math.sqrt(Math.abs(80 - tx * tx - ty * ty))
 
-      target.rotation.y *= 0.985
-      target.rotation.x *= 0.985
+      target.rotation.y *= 0.95
+      target.rotation.x *= 0.95
 
 
-      camera.position.x += (tx - camera.position.x) * 0.031
-      camera.position.y += (ty - camera.position.y) * 0.031
-      camera.position.z += (tz - camera.position.z) * 0.031
+      camera.position.x += (tx - camera.position.x) * 0.1
+      camera.position.y += (ty - camera.position.y) * 0.1
+      camera.position.z += (tz - camera.position.z) * 0.1
 
       camera.lookAt(0, 0, 0)
 

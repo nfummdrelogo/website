@@ -3,8 +3,8 @@
     <div>
       <div>
         <div class="container">
-          <h3>作品牆面</h3>
-          <p>目前沒有作品。</p>
+          <h2>作品牆面</h2>
+          <h4>目前沒有作品</h4>
         </div>
       </div>
     </div>
