@@ -5,7 +5,8 @@
         <h3>國立虎尾科技大學</h3>
         <h1>
           多媒體設計系
-          <br />LOGO
+          <br />
+          <span class="eng">LOGO</span>
         </h1>
         <h3>甄選比賽</h3>
         <img src="@/assets/blacklogo.png" class="logo" width="172" alt />
@@ -40,8 +41,6 @@ export default {
   position: relative;
 }
 
-
-
 .logo {
   margin-bottom: 40px;
 }
@@ -50,10 +49,12 @@ export default {
   position: absolute;
   top: 10%;
   right: -300px;
-  transition: all .2s;
+  transition: all 0.2s;
 }
-
-
+.eng{
+  font-family: "barlow", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
 @media (max-width: 1500px) {
   .vi {
     transform: scale(0.75);
