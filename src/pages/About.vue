@@ -39,7 +39,6 @@
         </section>
         <section class="info">
           <span class="important" title="多媒LOGO公布">多媒LOGO公布</span>
-          <br />
           <span class="important" title="2020年 1月1日">2020年 1月1日</span>
         </section>
         <section class="info">
@@ -86,7 +85,7 @@ export default {
 
 .info {
   text-align: center;
-  height: 160px;
+  min-height: 160px;
   margin: 15px;
   font-size: 24px;
   color: #444;
@@ -101,13 +100,17 @@ export default {
   color: #ffcc00;
   position: relative;
   -webkit-text-stroke: 8px #000000;
+  display: block;
   &::before {
+    display: block;
+    width: 100%;
     position: absolute;
     left: 0px;
-    top: -10px;
+    top: 0px;
     z-index: 1;
     content: attr(title);
-    -webkit-text-stroke: initial;
+    -webkit-text-stroke: 8px transparent;
+
     pointer-events: none;
   }
 }

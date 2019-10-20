@@ -1,6 +1,7 @@
 <template>
   <div>
     <canvas ref="canvas" width="600" height="500"></canvas>
+    <img src="@/assets/vi/shadow.png" alt="">
   </div>
 </template>
 
@@ -26,5 +27,11 @@ export default {
 <style scoped>
 div{
   pointer-events: none;
+}
+img{
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  opacity: .5;
 }
 </style>

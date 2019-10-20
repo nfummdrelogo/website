@@ -63,7 +63,7 @@ export default {
           obj.material.envMap = textureCube
           obj.material.envMapIntensity = 2
           obj.material.metalness = .99
-          obj.scale.y = 1.5
+          obj.scale.y = 1.3
           scene.add(obj)
         }
 
