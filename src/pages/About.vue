@@ -57,10 +57,7 @@ export default {
   font-weight: 600;
 }
 
-hr{
-  margin-top: 128px;
-  border: solid 1px #888;
-}
+
 @media (max-width: 1500px) {
   .vi {
     transform: scale(0.75);

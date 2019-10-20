@@ -9,6 +9,7 @@
         <transition name="page" mode="out-in">
           <router-view />
         </transition>
+
       </div>
     </div>
   </div>

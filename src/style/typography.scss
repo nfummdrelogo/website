@@ -19,6 +19,12 @@ h1 {
   font-weight: 800;
   margin-bottom: 50px;
 }
+
+hr{
+  margin-top: 128px;
+  border: solid 1px #888;
+}
+
 @media (max-width: 600px) {
   h3 {
     letter-spacing: 1em;
