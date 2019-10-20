@@ -14,6 +14,7 @@
           一件事情 很簡單。
           我們希望LOGO變好看。大家一起讓我們的視覺重新定義，是黑是白是粉是黃不重要，美最重要。從錄影帶到CD到現今的網路串播，經過了時代的變遷。LOGO設計的準則也與過去不同，我們需要每個人去嘗試設計符合現代的多媒系。
         </p>
+        <hr />
       </div>
       <div class="vi">
         <vi></vi>
@@ -51,9 +52,14 @@ export default {
   right: -300px;
   transition: all 0.2s;
 }
-.eng{
+.eng {
   font-family: "barlow", Arial, Helvetica, sans-serif;
   font-weight: 600;
+}
+
+hr{
+  margin-top: 128px;
+  border: solid 1px #888;
 }
 @media (max-width: 1500px) {
   .vi {

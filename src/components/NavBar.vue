@@ -19,20 +19,20 @@
           <div class="scroll">
             <div class="inside more">
               <div class="name">國立虎尾科技大學</div>
-              <div @click="expand=false">
-                <router-link class="item" to="/">關於比賽</router-link>
-              </div>
-              <div @click="expand=false">
-                <router-link class="item" to="/UploadGallery">作品牆面</router-link>
-              </div>
-              <div @click="expand=false">
-                <router-link class="item" to="/Upload">作品投稿</router-link>
-              </div>
+              <router-link class="item" to="/">
+                <div @click="expand=false">關於比賽</div>
+              </router-link>
+              <router-link class="item" to="/UploadGallery">
+                <div @click="expand=false">作品牆面</div>
+              </router-link>
+              <router-link class="item" to="/Upload">
+                <div @click="expand=false">作品投稿</div>
+              </router-link>
               <div class="item mute">外審評分</div>
               <div class="item mute">人氣投票</div>
-              <div @click="expand=false">
-                <router-link class="item" to="/Contact">聯絡我們</router-link>
-              </div>
+              <router-link class="item" to="/Contact">
+                <div @click="expand=false">聯絡我們</div>
+              </router-link>
               <img src="@/assets/downFontcard.png" class="inside downlogo" height="60" alt />
             </div>
           </div>
@@ -65,7 +65,6 @@ export default {
   z-index: 2;
   background: #222;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-
 }
 
 .mask {
@@ -80,7 +79,7 @@ export default {
   box-sizing: content-box;
 }
 
-.scroll{
+.scroll {
   padding-right: 50px;
   height: 100%;
   overflow: auto;
@@ -118,7 +117,7 @@ export default {
   }
   .name {
     position: relative;
-    margin-top: 16px;
+    margin-top: 15px;
     margin-bottom: 50px;
     letter-spacing: 16px;
     right: -16px;
@@ -174,6 +173,8 @@ export default {
   letter-spacing: 0.6em;
   right: -0.6em;
   display: inline-block;
+  vertical-align: middle;
+  line-height: 40px;
 
   margin: 16px 0px;
 

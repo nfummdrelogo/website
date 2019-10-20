@@ -74,17 +74,26 @@ export default {
     var x = 0;
     var y = 0;
 
+    function move(ex, ey){
+      x = ex / innerWidth - 0.5
+      y = ey / innerHeight - 0.5
+    }
+
     var animationObj = {
       stop: false,
       mouseMove: function (e) {
-        x = e.pageX / innerWidth - 0.5
-        y = e.pageY / innerHeight - 0.5
+        move(e.pageX, e.pageY)
+      },
+      touchmove: function(e){
+        move(e.changedTouches[0].pageX, e.changedTouches[0].pageY)
       }
     }
 
     addEventListener('mousemove', animationObj.mouseMove)
+    addEventListener('touchmove', animationObj.touchmove)
+
     function update() {
-      console.log('run')
+      // console.log('run')
       if (animationObj.stop) return;
       requestAnimationFrame(update);
 
@@ -118,6 +127,7 @@ export default {
   destroyed(animationObj) {
     animationObj.stop = true
     removeEventListener('mousemove', animationObj.mouseMove)
+    removeEventListener('touchmove', animationObj.touchmove)
 
   }
 }
