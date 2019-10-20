@@ -23,6 +23,7 @@
             一件事情 很簡單。
             我們希望LOGO變好看。大家一起讓我們的視覺重新定義，是黑是白是粉是黃不重要，美最重要。從錄影帶到CD到現今的網路串播，經過了時代的變遷。LOGO設計的準則也與過去不同，我們需要每個人去嘗試設計符合現代的多媒系。
           </p>
+          <hr />
         </section>
 
         <section class="info">
@@ -37,10 +38,12 @@
           人氣投票
           <br />12/25 - 12/31
         </section>
-        <section class="info">
-          <span class="important" title="多媒LOGO公布">多媒LOGO公布</span>
-          <span class="important" title="2020年 1月1日">2020年 1月1日</span>
+
+        <section class="date">
+          <div class="time">2020年 1月1日</div>
+          <div class="title">虎科多媒體 LOGO 公開</div>
         </section>
+
         <section class="info">
           <p>致邀請創作者們一同參與多媒系的LOGO甄選活動!</p>
           <p>讓大家一起改變多媒!</p>
@@ -93,27 +96,52 @@ export default {
   line-height: 2;
 }
 
-.important {
-  font-weight: 800;
-  font-size: 36px;
-  letter-spacing: 11.7px;
-  color: #ffcc00;
-  position: relative;
-  -webkit-text-stroke: 8px #000000;
-  display: block;
-  &::before {
-    display: block;
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
-    content: attr(title);
-    -webkit-text-stroke: 8px transparent;
+.date {
+  background-color: #ffcc00;
+  max-width: 380px;
+  height: 190px;
+  border-radius: 190px;
+  margin: 16px auto 60px;
+  box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.25);
+  text-align: center;
+  .time {
+    font-size: 36px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -2px;
+    padding-top: 65px;
+  }
+  .title {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    letter-spacing: 6.86px;
+    padding-top: 15px;
 
-    pointer-events: none;
   }
 }
+
+// .important {
+//   font-weight: 800;
+//   font-size: 36px;
+//   letter-spacing: 11.7px;
+//   color: #ffcc00;
+//   position: relative;
+//   -webkit-text-stroke: 8px #000000;
+//   display: block;
+//   &::before {
+//     display: block;
+//     width: 100%;
+//     position: absolute;
+//     left: 0px;
+//     top: 0px;
+//     z-index: 1;
+//     content: attr(title);
+//     -webkit-text-stroke: 8px transparent;
+
+//     pointer-events: none;
+//   }
+// }
 
 .vi {
   position: absolute;

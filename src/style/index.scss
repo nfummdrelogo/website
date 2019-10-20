@@ -25,7 +25,7 @@ body {
   box-sizing: border-box;
 }
 
-*::selection{
+*::selection {
   background-color: #ffcc00;
 }
 
@@ -34,7 +34,7 @@ body {
   margin: 0px 80px;
   padding-bottom: 20px;
 }
-.position-anchor{
+.position-anchor {
   position: relative;
 }
 @media (max-width: 768px) {
