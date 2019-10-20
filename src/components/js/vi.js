@@ -73,7 +73,7 @@ export default {
     });
 
     manager.onProgress = function (item, loaded, total) {
-      console.log(loaded, total)
+      console.log('loading', loaded + "/" + total)
       if (loaded == total)
         start()
     }
