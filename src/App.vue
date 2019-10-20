@@ -36,7 +36,7 @@ export default {
   padding-top: 80px;
   max-width: 1200px;
 
-  background: #ebebeb;
+  background: #e5e5e5;
   width: 100%;
   min-height: 100%;
   transition: all 0.1s;

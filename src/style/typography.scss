@@ -1,16 +1,18 @@
+// basic font setting
+* {
+  color: unset;
+  text-decoration: none;
+  font-family: "M PLUS 1p", "Noto Sans TC", sans-serif;
+  box-sizing: border-box;
+}
+
 p {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.45em;
 }
 
-h3 {
-  font-size: 24px;
-  margin-bottom: 50px;
-  line-height: 1.5;
-  letter-spacing: 40px;
-  font-weight: normal;
-}
+
 
 h1 {
   font-size: 120px;
@@ -23,12 +25,17 @@ h1 {
 h2{
   font-size: 64px;
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 12.48px;
   color: #222222;
   margin: 0px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 50px;
+  line-height: 1.5;
+  letter-spacing: 40px;
+  font-weight: normal;
 }
 
 h4{
@@ -46,12 +53,14 @@ hr{
 }
 
 @media (max-width: 600px) {
-  h3 {
-    letter-spacing: 1em;
-  }
-
   h1 {
     font-size: 70px;
     line-height: 80px;
   }
+  
+  h3 {
+    letter-spacing: 1em;
+  }
+
+  
 }
