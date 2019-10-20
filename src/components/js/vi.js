@@ -19,19 +19,29 @@ export default {
 
     var scene = new THREE.Scene
     var camera = new THREE.PerspectiveCamera(25, canvas.height / canvas.width, 0.1, 1000);
+
     var renderer = new THREE.WebGLRenderer({
       canvas, alpha: true, antialias: true
     })
 
+    renderer.setClearColor(0x00000000, 0)
+    renderer.setClearAlpha(0)
+    renderer.clearColor()
+
+    
+    // renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.gammaOutput = true;
+    renderer.gammaFactor = 1;
+    
+    // scene.add(new THREE.AmbientLight(0xffffff, 1))
 
     var textureCube = cubeTextureLoader.load([
       map1, map2, map3, map4, map5, map6
     ]);
 
 
-    renderer.setClearColor(0x00000000, 0)
-    renderer.setClearAlpha(0)
-    renderer.clearColor()
+
+    
 
 
     var target = new THREE.Mesh()
@@ -43,10 +53,11 @@ export default {
         target = obj
 
         if (obj.type == 'Mesh') {
-          obj.material = new THREE.MeshBasicMaterial({
+          obj.material = new THREE.MeshPhysicalMaterial({
             map: obj.material.map,
-            reflectivity: 0.4,
-            envMap: textureCube
+            metalness  : 6,
+            envMap: textureCube,
+            clearcoat: 1,
           })
           obj.scale.y = 1.5
           scene.add(obj)
@@ -95,7 +106,7 @@ export default {
 
     }
 
-    function start(){
+    function start() {
       target.rotation.y = -5;
       target.rotation.x = -1;
       update()
