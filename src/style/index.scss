@@ -25,12 +25,18 @@ body {
   box-sizing: border-box;
 }
 
+*::selection{
+  background-color: #ffcc00;
+}
+
 .container {
   max-width: 800px;
   margin: 0px 80px;
   padding-bottom: 20px;
 }
-
+.position-anchor{
+  position: relative;
+}
 @media (max-width: 768px) {
   .container {
     margin: 0px 40px;

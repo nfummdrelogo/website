@@ -136,7 +136,7 @@ export default {
     animationObj.stop = true
     removeEventListener('mousemove', animationObj.mouseMove)
     removeEventListener('touchmove', animationObj.touchmove)
-    removeEventListener('click', canvas.click)
+    removeEventListener('click', animationObj.click)
 
   }
 }
