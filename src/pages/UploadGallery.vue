@@ -30,10 +30,10 @@ import hidden from "../components/js/hidden";
 export default {
   name: "UploadGallery",
   data() {
-
     var app = this;
     hidden(function() {
       app.show = true;
+      app.update();
     });
 
     return {
@@ -41,23 +41,27 @@ export default {
       show: false
     };
   },
-  mounted() {
-    var app = this;
-    this.items.splice(0, this.items.length);
-    var xhr = new XMLHttpRequest();
+  mounted() {},
+  methods: {
+    update() {
+      var app = this;
+      this.items.splice(0, this.items.length);
+      var xhr = new XMLHttpRequest();
 
-    xhr.open("get", url);
-    xhr.onload = function() {
-      var result = JSON.parse(xhr.response);
-      for (var i = 0; i < result.time.length; i++) {
-        var obj = {};
-        for (var j in result) {
-          obj[j] = result[j][i];
+      xhr.open("get", url);
+      xhr.onload = function() {
+        console.log("fetch");
+        var result = JSON.parse(xhr.response);
+        for (var i = 0; i < result.time.length; i++) {
+          var obj = {};
+          for (var j in result) {
+            obj[j] = result[j][i];
+          }
+          // app.items.push(obj);
         }
-        // app.items.push(obj);
-      }
-    };
-    xhr.send();
+      };
+      xhr.send();
+    }
   }
 };
 </script>
