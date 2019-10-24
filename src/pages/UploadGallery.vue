@@ -14,7 +14,7 @@
           ></div>
         </template>
       </div>
-      <div class="cover">
+      <div class="cover" :hidden="show">
         <div class="msg">即將於10/25開放</div>
       </div>
     </div>
@@ -25,11 +25,20 @@
 var url =
   "https://script.google.com/macros/s/AKfycbzGMZozxCi_TD56G-exkreTIbx0RY7Dkf2PE5i8PhCWUBV4Ldc/exec";
 
+import hidden from "../components/js/hidden";
+
 export default {
   name: "UploadGallery",
   data() {
+
+    var app = this;
+    hidden(function() {
+      app.show = true;
+    });
+
     return {
-      items: []
+      items: [],
+      show: false
     };
   },
   mounted() {

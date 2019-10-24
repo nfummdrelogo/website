@@ -30,22 +30,33 @@
 
       <hr />
     </div>
-    <div class="cover">
+    <div class="cover" :hidden="show">
       <div class="msg">即將於10/25開放</div>
     </div>
   </div>
 </template>
 
 <script>
+import hidden from "../components/js/hidden";
+
 export default {
   name: "Upload",
   data() {
+    var app = this;
+    console.log("hi");
+
+    hidden(function() {
+      app.show = true;
+    });
+
     return {
       window,
       file: null,
-      link: ""
+      link: "",
+      show: false
     };
   },
+
   methods: {
     upload() {
       var app = this;
@@ -84,7 +95,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@import '../style/rwd';
+@import "../style/rwd";
 
 .iframe-wrapper {
   margin: 50px -50px;
@@ -93,8 +104,6 @@ export default {
 iframe {
   width: 100%;
 }
-
-
 
 .cover {
   position: absolute;
