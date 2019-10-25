@@ -3,6 +3,9 @@
     <div class="container">
       <h2>作品牆面</h2>
       <h4>RELOGO</h4>
+      <template v-if="status!=''">
+        <p>{{status}}</p>
+      </template>
       <div class="gallery-grid">
         <template v-for="(item, i) in items">
           <div
@@ -38,10 +41,13 @@ export default {
 
     return {
       items: [],
-      show: false
+      show: true,
+      status: ""
     };
   },
-  mounted() {},
+  mounted() {
+    this.update();
+  },
   methods: {
     update() {
       var app = this;
@@ -50,17 +56,21 @@ export default {
 
       xhr.open("get", url);
       xhr.onload = function() {
+        app.status = "";
         console.log("fetch");
         var result = JSON.parse(xhr.response);
         for (var i = 0; i < result.time.length; i++) {
           var obj = {};
+          var hasValue = false;
           for (var j in result) {
             obj[j] = result[j][i];
+            if (obj[j] != "") hasValue = true;
           }
-          // app.items.push(obj);
+          if (hasValue) app.items.push(obj);
         }
       };
       xhr.send();
+      app.status = "loading...";
     }
   }
 };

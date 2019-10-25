@@ -53,7 +53,7 @@ export default {
       window,
       file: null,
       link: "",
-      show: false
+      show: true
     };
   },
 
