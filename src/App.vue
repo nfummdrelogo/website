@@ -11,6 +11,8 @@
         </transition>
       </div>
     </div>
+
+    <div class="background"></div>
   </div>
 </template>
 
@@ -25,11 +27,11 @@ export default {
 </script>
 
 <style>
-
-
 .nav {
   height: 100%;
   overflow: visible;
+  position: fixed;
+  z-index: 1;
 }
 
 .page {
@@ -49,23 +51,35 @@ export default {
   min-width: 100vw;
   padding-right: 120px;
   overflow-x: hidden;
+
+  padding-left: 75px;
 }
 
 @media (max-width: 800px) {
   .wrapper {
     padding-right: 0px;
+    padding-left: 0px;
   }
 }
-
 
 #app {
   display: flex;
 
-  height: 100%;
   width: 100%;
+  min-height: 100vh;
   overflow: hidden;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url("./assets/BG.jpg");
+  background-size: cover;
+  background-position-x: right;
 }
 </style>

@@ -1,3 +1,5 @@
+
+
 // basic font setting
 * {
   color: unset;
@@ -52,6 +54,14 @@ hr {
   border: solid 1px #888;
 }
 
+li {
+  display: flex;
+  &:before {
+    content: "●";
+    margin-right: 12px;
+  }
+  margin: 10px 0px;
+}
 @media (max-width: 800px) {
   p {
     font-size: 16px;

@@ -1,0 +1,23 @@
+.button {
+  cursor: pointer;
+  text-align: center;
+  line-height: 48px;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 24px;
+  color: #444444;
+  background: none;
+  height: 48px;
+  border: solid 1px #000000;
+  border-radius: 20px;
+
+  .text {
+    margin-right: -24px;
+  }
+  &:hover,
+  &:active {
+    background-color: lightgray;
+  }
+}

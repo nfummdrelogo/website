@@ -34,6 +34,41 @@
       </section>
 
       <div class="container">
+        <div class="inforow">
+          <div class="item">
+            <h3>比賽獎金</h3>
+            <p>本次甄選提供前三名以及十位優選作品的獎勵</p>
+            <div class="gap"></div>
+            <div class="pricelist">
+              <h4>金獎- 4000元</h4>
+              <h4>銀獎- 2000元</h4>
+              <h4>銅獎- 1000元</h4>
+              <h4>
+                優選- 200元
+                <small>(五件)</small>
+              </h4>
+            </div>
+            <div class="gap"></div>
+            <router-link class="button" to="/Upload">
+              <div class="text">立即投稿</div>
+            </router-link>
+          </div>
+
+          <div class="separator"></div>
+
+          <div class="item">
+            <h3>校外評審</h3>
+            <p>來自國內的優秀設計師一同與我們進行甄選</p>
+            <div class="gap"></div>
+            <div class="imgitem teacher"></div>
+            <div class="gap"></div>
+            <h4>二棲設計- 林呈軒</h4>
+          </div>
+
+          <div class="separator"></div>
+
+        </div>
+
         <section class="info">
           徵稿日期
           <br />10/25 - 12/10
@@ -65,6 +100,7 @@
 
 <script>
 import vi from "@/components/vi.vue";
+
 export default {
   name: "About",
   data() {
@@ -100,6 +136,104 @@ export default {
   }
 }
 
+// INFO
+
+.inforow {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  margin: 0px -28px;
+
+  @include rwd-dn(phone) {
+    flex-direction: column;
+    margin: 0px;
+  }
+
+  .separator {
+    display: none;
+    @include rwd-dn(phone) {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #888888;
+      margin: 40px 0px;
+    }
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+    margin: 28px;
+    padding: 0px 10px 25px;
+    min-height: 440px;
+    @include rwd-dn(phone) {
+      box-shadow: none;
+      margin: 0px;
+    }
+    h3 {
+      font-size: 36px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 14.4px;
+      color: #222222;
+      margin: 20px 0px;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 7.2px;
+      color: #444444;
+    }
+
+    p {
+      margin: 0px;
+      font-family: Mplus1p;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 4.8px;
+      color: #666666;
+    }
+
+   
+
+    .pricelist {
+      text-align: left;
+      display: inline-block;
+      margin: auto;
+    }
+    .gap {
+      flex-grow: 1;
+      min-height: 15px;
+    }
+    small {
+      font-size: 12px;
+    }
+    .imgitem {
+      margin: auto;
+      width: 225px;
+      height: 225px;
+      background-size: contain;
+
+      &.teacher {
+        background-image: url("../assets/teacher.png");
+      }
+    }
+  }
+}
+
 .info {
   text-align: center;
   min-height: 160px;
@@ -127,17 +261,17 @@ export default {
 }
 
 .date {
-  background-color: #ffcc00;
+  background: none;
   max-width: 380px;
   height: 190px;
-  border-radius: 190px;
+  border-radius: 50px;
   margin: 16px auto 60px;
   box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.25);
   text-align: center;
   .time {
     font-size: 36px;
-    font-weight: 800;
-    color: white;
+    color: #404040;
+
     letter-spacing: -2px;
     padding-top: 65px;
   }
@@ -148,6 +282,7 @@ export default {
     letter-spacing: 6.86px;
     padding-top: 15px;
   }
+  border: solid 1px #000000;
 }
 
 .vi {
