@@ -143,6 +143,7 @@ export default {
     width: 660px;
     max-width: 100%;
     background-size: cover;
+    box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.25);
 
     img {
       width: 100%;
