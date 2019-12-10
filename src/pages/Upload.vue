@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container" :hidden="!show">
       <h2>作品投稿</h2>
 
       <h4>RELOGO</h4>
@@ -108,7 +108,7 @@
       </div>
     </div>
     <div class="cover" :hidden="show">
-      <div class="msg">即將於10/25開放</div>
+      <div class="msg">投稿已截止</div>
     </div>
   </div>
 </template>
@@ -130,7 +130,7 @@ export default {
       window,
       file: null,
       link: "",
-      show: true
+      show: false
     };
   },
 

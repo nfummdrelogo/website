@@ -2,7 +2,8 @@
   &-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px -40px;
+    margin: 0px -30px;
+    width: 100%;
   }
 
   &-item {
@@ -10,7 +11,7 @@
     width: 200px;
     height: 200px;
     box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.25);
-    margin: 40px;
+    margin: 30px;
     background-image: url("../assets/logosnocolor.jpg");
     background-size: cover;
 

@@ -27,7 +27,7 @@
               <router-link class="item" to="/UploadGallery">
                 <div @click="expand=false">作品牆面</div>
               </router-link>
-              <router-link class="item" to="/Upload">
+              <router-link class="item mute" to="/Upload">
                 <div @click="expand=false">作品投稿</div>
               </router-link>
               <div class="item mute">外審評分</div>

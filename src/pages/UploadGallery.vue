@@ -6,9 +6,22 @@
       <template v-if="status!=''">
         <p>{{status}}</p>
       </template>
+      <p>
+        <span>頁數：</span>
+        <span
+          :class="{
+          pageitem: true,
+          selected: i==page
+          }"
+          v-for="i in pages"
+          :key="i"
+          @click="page=i"
+        >{{i+1}}</span>
+      </p>
       <div class="gallery-grid">
         <template v-for="(item, i) in items">
           <div
+            :hidden="!(i>=page*maxitem&&i<page*maxitem+maxitem)"
             class="gallery-item"
             :key="i"
             v-bind:style="{
@@ -18,6 +31,18 @@
           ></div>
         </template>
       </div>
+      <p>
+        <span>頁數：</span>
+        <span
+          :class="{
+          pageitem: true,
+          selected: i==page
+          }"
+          v-for="i in pages"
+          :key="i"
+          @click="page=i"
+        >{{i+1}}</span>
+      </p>
       <div class="popout" v-if="selected!=null">
         <div class="expand">
           <div class="scroll">
@@ -59,7 +84,10 @@ export default {
       items: [],
       show: true,
       status: "",
-      selected: null
+      selected: null,
+      page: 0,
+      maxitem: 15,
+      pages: []
     };
   },
   mounted() {
@@ -85,6 +113,10 @@ export default {
           }
           if (hasValue) app.items.push(obj);
         }
+
+        let pageCount = app.items.length / app.maxitem;
+        for (let i = 0; i < pageCount; i++) app.pages.push(i);
+        console.log(app.pages);
       };
       xhr.send();
       app.status = "loading...";
@@ -191,6 +223,16 @@ export default {
     letter-spacing: 2.4px;
 
     font-size: 24px;
+  }
+}
+
+.pageitem {
+  cursor: pointer;
+  text-align: center;
+  margin: 0px 8px;
+  &.selected {
+    text-decoration: underline;
+    cursor: default;
   }
 }
 </style>
