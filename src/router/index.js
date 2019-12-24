@@ -5,6 +5,7 @@ import About from '@/pages/About.vue'
 import Upload from '@/pages/Upload.vue'
 import UploadGallery from '@/pages/UploadGallery.vue'
 import Contact from '@/pages/Contact.vue'
+import Voting from '@/pages/Voting.vue'
 
 Vue.use(Router)
 
@@ -38,9 +39,15 @@ export default new Router({
       component: UploadGallery
     },
     {
+      path: '/Voting',
+      name: 'Voting',
+      component: Voting
+    },
+    {
       path: '/Contact',
       name: 'Contact',
       component: Contact
-    }
+    },
+  
   ]
 })

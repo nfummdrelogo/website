@@ -31,7 +31,9 @@
                 <div @click="expand=false">作品投稿</div>
               </router-link>
               <div class="item mute">外審評分</div>
-              <div class="item mute">人氣投票</div>
+              <router-link class="item" to="/Voting">
+                <div @click="expand=false">人氣投票</div>
+              </router-link>
               <router-link class="item" to="/Contact">
                 <div @click="expand=false">聯絡我們</div>
               </router-link>
