@@ -55,12 +55,14 @@ hr {
 }
 
 li {
-  display: flex;
+  // display: flex;
   &:before {
     content: "●";
-    margin-right: 12px;
+    position: absolute;
+    transform: translate(-30px, 0);
   }
   margin: 10px 0px;
+  margin-left: 30px;
 }
 @media (max-width: 800px) {
   p {
